@@ -8,9 +8,7 @@
   <title>Document</title>
 </head>
 <style>
-  #root:nth-child() {
-    
-  }
+ 
 </style>
 
 <body>
@@ -18,50 +16,87 @@
 
   <div id="root">
     <div id="dd"></div>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjBiOLC4VfGG4LfEVlLcYMJevMNtNAxCkWfywVfWhYKA&s" alt="">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTezXCxF11O7nyCZdRYnqshdCPznidNibJtCxnmLPlA1Q&s" alt="">
-    <button>
-click
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjBiOLC4VfGG4LfEVlLcYMJevMNtNAxCkWfywVfWhYKA&s"
+      alt="">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTezXCxF11O7nyCZdRYnqshdCPznidNibJtCxnmLPlA1Q&s"
+      alt="">
+    <img src="https://www.artinsight.co.kr/data/tmp/2206/20220613133628_maqvywwk.jpg" alt="">
+    <button id="right">
+      click
+    </button>
+    <button id="left">
+      click2
     </button>
   </div>
 
- 
+
 
   <script>
-const root = document.getElementById("root");
-const btn = document.querySelector("#root > button");
-const imgOne = document.querySelector("#root > img:nth-child(2)");
-const imgTwo = document.querySelector("#root > img:nth-child(3)");
-const testdiv = document.querySelector("#root > #dd");
+    const root = document.getElementById("root");
+    const btnr = document.querySelector("#root > #right");
+    const btnl = document.querySelector("#root > #left");
 
-imgTwo.style.display = "none"
-imgOne.style.display = "none"
-let i = true;
-btn.addEventListener("click",function(){
-  if( i === true){
-    imgOne.style.display = ""
+    const imgOne = document.querySelector("#root > img:nth-child(2)");
+    const imgTwo = document.querySelector("#root > img:nth-child(3)");
+    const imgThree = document.querySelector("#root > img:nth-child(4)");
+
+    const testdiv = document.querySelector("#root > #dd");
+
     imgTwo.style.display = "none"
-  root.appendChild(testdiv);
-  i = false;
-  console.log(i);
-}
-  else{
-    imgTwo.style.display = ""
-  
     imgOne.style.display = "none"
-    root.appendChild(testdiv);
-    i = true;
-  }
+    imgThree.style.display = "none"
 
-})
+    let counter = 0;
+    let listImg = [
+      imgOne, imgTwo, imgThree
+    ];
+    console.log(listImg);
+    // btnr.addEventListener("click", right());
 
+    let obj = {
+      test: 0,
+      br: function() {
+       return ++counter;
+      },
+      ar: function(){
+        return counter;
+      }
+    };
 
+    console.log(obj.ar());
+    
+    function btnRight(){
 
+      for(let i = 0; i < listImg.length;i++){
 
-function btnclick(){
+      }
 
-}
+    }
+    
 
+// btnl.addEventListener("click", function () {
+//       if(counter === 0){
+       
+//     imgOne.style.display = ""
+//     imgTwo.style.display = "none"
+//     imgThree.style.display = "none"
+//     --counter;
+//       }
+//       else  if(counter === 1){
+       
+//        imgOne.style.display ="none"
+//        imgTwo.style.display = ""
+//        imgThree.style.display = "none"
+//        --counter;
+//          }
+//          else  if(counter === 2){
+       
+//        imgOne.style.display = "none"
+//        imgTwo.style.display = "none"
+//        imgThree.style.display = ""
+//        counter = 3;
+//          }
+// });
 
   </script>
 </body>
