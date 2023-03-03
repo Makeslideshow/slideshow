@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #root:nth-child() {
+    
+  }
+</style>
+
+<body>
+
+
+  <div id="root">
+    <div id="dd"></div>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjBiOLC4VfGG4LfEVlLcYMJevMNtNAxCkWfywVfWhYKA&s" alt="">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTezXCxF11O7nyCZdRYnqshdCPznidNibJtCxnmLPlA1Q&s" alt="">
+    <button>
+click
+    </button>
+  </div>
+
+ 
+
+  <script>
+const root = document.getElementById("root");
+const btn = document.querySelector("#root > button");
+const imgOne = document.querySelector("#root > img:nth-child(2)");
+const imgTwo = document.querySelector("#root > img:nth-child(3)");
+const testdiv = document.querySelector("#root > #dd");
+
+imgTwo.style.display = "none"
+imgOne.style.display = "none"
+let i = true;
+btn.addEventListener("click",function(){
+  if( i === true){
+    imgOne.style.display = ""
+    imgTwo.style.display = "none"
+  root.appendChild(testdiv);
+  i = false;
+  console.log(i);
+}
+  else{
+    imgTwo.style.display = ""
+  
+    imgOne.style.display = "none"
+    root.appendChild(testdiv);
+    i = true;
+  }
+
+})
+
+
+
+
+function btnclick(){
+
+}
+
+
+  </script>
+</body>
+
+</html>
