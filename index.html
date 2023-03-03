@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+<style>
+  img {
+    width: 100px;
+    height: 100px;
+  }
+</style>
+
 <body>
-  슬라이드쇼 만들기
+  <div id="root">
+    <img src="first.jpg" alt="">
+    <img src="second.jpg" alt="">
+    <button>
+      click!
+    </button>
+  </div>
+  <script>
+    const root = document.getElementById("root");
+    const button = document.querySelector("#root > button");
+    const imgone = document.querySelector("#root > img:nth-child(1)");
+    const imgtwo = document.querySelector("#root > img:nth-child(2)");
+
+
+    console.dir(imgone);
+
+    let count = 0;
+    imgone.style.display = "";
+    imgtwo.style.display = "none";
+
+    button.addEventListener("click", function () {
+      if ((count % 2) === 0) {
+        imgone.style.display = "none";
+        imgtwo.style.display = "";
+      } else {
+        imgone.style.display = "";
+        imgtwo.style.display = "none";
+      }
+      count++;
+    })
+
+  </script>
 </body>
+
 </html>
